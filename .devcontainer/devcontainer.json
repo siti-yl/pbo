@@ -17,6 +17,9 @@
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
+			"settings": {
+				"markdownlint.ignore": ["LICENSE"]
+			},
 			"extensions": [
 				"ms-python.python",
 				"ms-python.flake8",
