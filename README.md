@@ -12,3 +12,19 @@ Materi:
 3. [Membuat dan Menguji Program](https://docs.google.com/presentation/d/1mypdO97pLIT8iX9YpBYkuxpnYZBKzasD/edit)
     - [membuat_dan_menguji_program.py](membuat_dan_menguji_program.py)
 4. [Konsep OOP pada Python](https://drive.google.com/file/d/1pm2Sm-Iih5gi8oynQis7MkpMZk8LPcJi/view)
+    1. Paradigma Pemrograman:
+        - [Prosedural](konsep_oop_pada_python/prosedural.py)
+        - [Fungsional](konsep_oop_pada_python/fungsional.py)
+        - [Pemrograman Berorientasi Objek (PBO)](konsep_oop_pada_python/pbo.py)
+    2. [Apa itu PBO](konsep_oop_pada_python/apa_itu_pbo.py)
+    3. Pilar PBO:
+        - [_Encapsulation_](konsep_oop_pada_python/encapsulation.py)
+        - _Inheritance_:
+            1. [_Single_](konsep_oop_pada_python/inheritance/single.py)
+            2. [_Multilevel_](konsep_oop_pada_python/inheritance/multilevel.py)
+            3. [_Hierarchical_](konsep_oop_pada_python/inheritance/hierarchical.py)
+            4. [_Multiple_](konsep_oop_pada_python/inheritance/multiple.py)
+        - _Polymorphism_:
+            - [_Polymorphism_ dengan _Class_](konsep_oop_pada_python/polymorphism/dengan_class.py)
+            - [_Polymorphism_ dengan _Inheritance_](konsep_oop_pada_python/polymorphism/dengan_inheritance.py)
+        - [_Abstraction_](konsep_oop_pada_python/abstraction.py)
