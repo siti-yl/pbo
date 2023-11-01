@@ -28,3 +28,4 @@ Materi:
             - [_Polymorphism_ dengan _Class_](konsep_oop_pada_python/polymorphism/dengan_class.py)
             - [_Polymorphism_ dengan _Inheritance_](konsep_oop_pada_python/polymorphism/dengan_inheritance.py)
         - [_Abstraction_](konsep_oop_pada_python/abstraction.py)
+5. [_Building Blocks_](https://drive.google.com/file/d/14E9r_DTD_mr9jxiWj-sE1eiSi8jt78-i/view)
