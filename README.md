@@ -52,4 +52,6 @@ Materi:
     - [_Object Serialization_](https://drive.google.com/file/d/1dGi9O729cbxZcTz5xdWiqksjRlUZeX-Q/view)
         - [JSON](object_serialization/tes_json.py)
         - [YAML](object_serialization/script_yaml1.py)
+        - [_Debugging_](https://realpython.com/python-debugging-pdb/)
+        - [_Logging_](https://realpython.com/python-logging/)
 12. [_Python Libraries_](https://drive.google.com/file/d/1wdhtA7vH6dpGVa4nmixuBXuYpXK8YgrW/view?usp=sharing)
