@@ -55,3 +55,4 @@ Materi:
         - [_Debugging_](https://realpython.com/python-debugging-pdb/)
         - [_Logging_](https://realpython.com/python-logging/)
 12. [_Python Libraries_](https://drive.google.com/file/d/1wdhtA7vH6dpGVa4nmixuBXuYpXK8YgrW/view?usp=sharing)
+13. [UAS](https://drive.google.com/file/d/17uy2_kR7yXJiwAsx95lRWGrgBFb79vI4/view)
