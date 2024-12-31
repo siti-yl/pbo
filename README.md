@@ -34,7 +34,7 @@ Daftar Materi:
 7. [_Object Oriented Shortcuts_](https://drive.google.com/file/d/149J5S_NapIrMu0-Ca8r7Mqm-NeijTxKs/view)
 8. [_Inheritance and Polymorphism_](https://drive.google.com/file/d/1MiOI4ZyzWow_HY-_2wxvdC1pwzc5ySGs/view)
     - [Dekorator staticmethod dan classmethod](https://jagongoding.com/python/menengah/oop/classmethod/)
-9. SOLID Principles
+9. _SOLID Principles_
     - [_SOLID: The First 5 Principles of Object Oriented Design_](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
     - [_SOLID Principles Explained_](https://www.youtube.com/watch?v=V3TUEeB0kW0)
 10. [_Python Design Pattern_](https://drive.google.com/file/d/1So0nTMM9QeY0kKSiKL3Y6jkgKJQHB1JC/view)
