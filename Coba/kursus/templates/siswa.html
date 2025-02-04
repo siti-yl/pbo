@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Siswa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .back-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Datang di Halaman Siswa</h1>
+    
+    <p>Halo, {{ request.user.username }}! Silakan pilih aktivitas berikut:</p>
+
+    <h3>Kursus yang Anda Ikuti:</h3>
+    <ul>
+        {% for kursus_item in kursus %}
+            <li>
+                <a href="{% url 'kuis' kursus_item.id %}">Mulai Kuis untuk {{ kursus_item.judul }}</a>
+            </li>
+        {% empty %}
+            <li>Tidak ada kursus yang terdaftar.</li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        <li><a href="{% url 'materi' %}">Materi Kursus</a></li>
+    </ul>
+
+    <a href="{% url 'daftar_kursus' %}" class="back-link">Kembali ke Daftar Kursus</a>
+
+</body>
+</html>

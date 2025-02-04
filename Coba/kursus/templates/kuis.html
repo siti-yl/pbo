@@ -1,0 +1,117 @@
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Kuis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .soal {
+            margin-bottom: 20px;
+        }
+
+        .soal p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .pilihan {
+            margin-bottom: 10px;
+        }
+
+        .pilihan input {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .hasil {
+            background-color: #e6ffe6;
+            color: #2e7d32;
+            padding: 10px;
+            margin-top: 20px;
+            border-left: 5px solid #2e7d32;
+        }
+
+        .hasil .salah {
+            background-color: #ffebee;
+            color: #c62828;
+            border-left: 5px solid #c62828;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ kursus.judul }} - Kuis</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="pendaftaran_id" value="{{ pendaftaran.id }}">
+
+        {% for kuis_item in kuis %}
+            <div class="soal">
+                <p>{{ kuis_item.pertanyaan }}</p>
+                {% for pilihan in kuis_item.pilihan.all %}
+                    <div class="pilihan">
+                        <input type="radio" id="jawaban_{{ kuis_item.id }}_{{ pilihan.id }}" name="jawaban_{{ kuis_item.id }}" value="{{ pilihan.id }}"
+                        {% if hasil_kuis_dict|get_item:kuis_item.id == pilihan.id %} checked {% endif %}>
+                        <label for="jawaban_{{ kuis_item.id }}_{{ pilihan.id }}">{{ pilihan.teks }}</label>
+                    </div>
+                {% endfor %}
+                
+                {% if hasil_kuis_dict|get_item:kuis_item.id %}
+                    <div class="hasil {% if not hasil_kuis_dict|get_item:kuis_item.id.benar %}salah{% endif %}">
+                        {{ hasil_kuis_dict|get_item:kuis_item.id.feedback }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        {% if error_message %}
+            <div class="error">{{ error_message }}</div>
+        {% endif %}
+
+        <button type="submit">Kirim Jawaban</button>
+    </form>
+</body>
+</html>

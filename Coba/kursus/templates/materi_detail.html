@@ -1,0 +1,87 @@
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Materi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 36px;
+            color: #007BFF;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .materi-content {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+        .materi-item {
+            margin-bottom: 20px;
+        }
+        .materi-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .materi-item p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center; 
+            gap: 15px; 
+            margin-top: 30px;
+        }
+        .button-group a {
+            padding: 10px 20px; 
+            border-radius: 6px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .button-group a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>{{ materi.judul }}</h1>
+        <div class="materi-content">
+            {% for item in materi.konten|split_lines %}
+                <div class="materi-item">
+                    <p>{{ item }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="button-group">
+            <a href="{% url 'materi_view' kursus.id %}">Kembali ke Daftar Materi</a>
+        </div>        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Kursus</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 36px;
+            color: #007BFF;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .course-select {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .course-select label {
+            font-size: 18px;
+            color: #333;
+            margin-right: 10px;
+        }
+        .course-dropdown {
+            padding: 12px;
+            font-size: 16px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        .course-dropdown:hover {
+            border-color: #007BFF;
+        }
+        .materi-list {
+            margin-top: 30px;
+            padding: 0;
+            list-style-type: none;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .materi-list li {
+            background-color: #ffcc00;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: left;
+        }
+        .materi-list li:hover {
+            background-color: #ffd700;
+        }
+        .materi-img {
+            max-width: 300px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .button-group a {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            width: auto; 
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            background-color: #f1f1f1;
+            color: #007BFF;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #ddd;
+        }
+
+        
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #777;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Materi Kursus</h1>
+
+        <ul class="materi-list">
+            {% for materi in materi %}
+                <li>
+                    <a href="{% url 'materi_detail' materi.id %}">{{ materi.judul }}</a>
+                </li>
+            {% empty %}
+                <li>Belum ada materi.</li>
+            {% endfor %}
+        </ul>
+
+        <div class="button-group">
+            <a href="{% url 'halaman_siswa' %}" class="back-link">Kembali</a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Terima kasih telah mengikuti kursus kami!</p>
+    </div>
+
+</body>
+</html>
